@@ -11,12 +11,28 @@ while True: # メインのゲームループ
     
     while True: # プレイヤーの入力ループ
         print("Enter your move: (r)ock, (p)aper, (s)cissors, or (q)uit")
-        player_move = input().lower() # 小文字で処理
+        player_move = input().lower()  # 小文字で処理
         if player_move == 'q':
             sys.exit()  # プログラムを終了
-        if player_move in ('r', 'p', 's'):
+        elif player_move == 'f':
+            print("""
+   fﾆヽ
+   |_||
+   |= |
+   |_ |
+   |||
+/⌒|~ |⌒i-、
+/|　|　|　| ｜
+｜(　(　(　(　｜
+｜　　　　　 ｜
+＼　　　　　/
+  ＼
+
+""")
+        elif player_move in ('r', 'p', 's'):
             break
-        print("Invalid input. Type one of r, p, s, or q.")
+        else:
+            print("Invalid input. Type one of r, p, s, or q.")
 
     # プレイヤーの入力した手を表示する
     if player_move == 'r':
@@ -50,4 +66,3 @@ while True: # メインのゲームループ
     else:
         print("You lose!")
         losses += 1
-
